@@ -20,6 +20,70 @@
         let y = 8.75
         alert(y)
 
+        // Declarar múltiplas variáveis de uma só vez
+        let a = 15, b = 4.5, c = 2
+
+        // Operadores aritméticos
+
+        alert(a - b) //subtração
+        alert(a * b) //multiplicação
+        alert(a / b) //divisão
+        alert(a + b) //soma
+        alert(a % c) // resto da divisão inteira (modulo)
+        alert(a ** c) //pontenciação
+
+        let d = '3' // Uma string que contém um número dentro
+        alert (a - d) // subtração de número e string
+        // se uma string contém dentro dela um número válido e a string é usada em experessões aritméticas
+        // o javaScript a converterá em número e fara a operação normalmente, na maiorida dos casos
+        alert (a * d) // multiplicação de número e string
+        alert (a / d) // divisão de número e string
+        alert (a % d) // modulo da divisão de número e string
+        alert (a ** d) // potenciação de número elevado a string
+        alert (a + d) // adição de número e string (concatena as duas variáveis, é a execessão)
+        // o sinal de + no javaScript tem duas funções:
+        // 1) Se todos os seus operadores forem números, ele fará a soma
+        // 2) Se alguns dos seus operandos for string, será feita uma concatenação de strings
+
+        //Concatenando strings
+        let msg1 = "Bom"
+        let msg2 = 'Dia'
+        alert (msg1 + ' ' + msg2)
+        // aspas simples ou dupla é a mesma coisa no javaScript
+
+        alert (1 + 2 + 3)
+        alert ('teste' + 1 + 2 + 3) //Ocorerrá concatenação(resultado será teste123)
+
+        let e = 'batata'
+        alert (a - e) //resultado será NaN = Not a Number
+        alert (2 * e) //NaN
+        alert (a / e) //NaN
+        // todos vão dar NaN exceto
+        alert (a + e) // concatenação
+
+        //TIPOS DE DADOS
+        let teste
+        alert(typeof teste) // uma variável quando não tem nada dentro é undefined
+
+        teste = 1000
+        alert(typeof teste) //number 
+
+        teste = 'Fatec Franca'
+        alert(typeof teste) //string
+
+        teste = true
+        alert(typeof teste) //boolean
+
+        teste = 3.1416
+        alert(typeof teste)
+
+
+
+
+    
+
+
+
 
     </script>
 </head>
