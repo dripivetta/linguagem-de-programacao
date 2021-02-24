@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comparações</title>
+    <script>
+        // Ativa verificações adicionais de variáveis 
+        // Modo "chato" do JavaScript
+        'use strict'
+        // parseInt() tenta converter um texto em número, se possível
+        // caso o texto não contenha um número válido, o resultado será NaN (not a number)
+        let numero = parseInt(prompt ("Informe um número menor que 1000:"))
+        // no lugar do parseInt pode usar o Number() parseInt pega somente numeros inteiros e Number numeros fracionados
+        
+        // if ("asdfasdfasdf" < "1000")
+        // por se tratar de prompt é um texto
+        // o JavaScrip faz uma comparação de string com string ele usa a tabela ASCII para saber se é menor que 1000
+        if(isNaN(numero)){ // O resultado da conversão for NaN 
+            alert("Desculpe-me, mas isso que você informou não é um número")
+        }
+        else if(numero < 1000){
+            alert("Parabéns, você acertou!")
+        }
+        else if(numero == 1000){ 
+            // JS, um = é para atribuição (colocar valor em variável)
+            // Para comparações, precisamos de pelo menos 2 sinais de ==
+            alert("Desculpe-me, mas 1000 não é menor do que 1000")
+        }
+        else{
+            alert("Infelizmente, você não acertou!")
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
