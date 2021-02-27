@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página modelo</title>
+    <script>
+        // Ativa verificações adicionais de variáveis 
+        // Modo "chato" do JavaScript
+        'use strict'
+        /* operadores lógicos em JS
+            && -> E lógico (AND)
+            || -> OU lógico (OR)
+            !  -> NÃO lógico (NOT)
+        */
+       let a = 5, b = 10, c = 0
+       document.write(a > 1 && b < 15)
+       document.write ('<br>') // <br> breaking row (quebra de linha)
+       // ou <hr> horizontal rule (traço horizontal)
+       document.write(b === 10 && c <0)
+       // ou pode ser feito
+
+       document.write ("<hr>") // para colocar um traço
+       if (a > 1 && b < 15){
+           document.write("A condição é verdadeira")
+       }
+       else{
+           document.write("A condição é falsa")
+       }
+       document.write("<hr>") // para colocar um traço
+
+       //TESTANDO O OPERADOR || (pipe line)
+       document.write (a === 5 || c!==0) // !== diferença exata ou != diferente
+       document.write ("<br>")
+       document.write (b !== 10 || a !==5)
+       document.write ("<hr>")
+
+       // TESTANDO O OPERADOR ! (not)
+       // colocar a expressão entre parenteses, porque se não o operador ! (not) vai inverter só a primeira variável
+       // ORDEM DOS OPERADORES LÓGICOS
+       // 1º: !
+       // 2º: &&
+       // 3º ||
+       // essa ordem pode ser modificada com o uso de ()
+       document.write (!(a === 0 && b >20))
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
