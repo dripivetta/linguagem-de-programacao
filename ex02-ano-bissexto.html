@@ -31,17 +31,22 @@
 
      let numero = parseInt(prompt("Informe um ano para saber se é ano bixesto:"))
 
-     if(isNaN(numero)){ // O resultado da conversão for NaN 
-            alert("Desculpe-me, mas isso que você informou não é um número")
+     if(isNaN(numero) || numero<1582){ // O resultado da conversão for NaN 
+            alert("Desculpe-me, mas isso que você informou não é um número, ou o ano é menor que 1582")
         }
-        else if (numero && 400 === 0){
+        else if (numero % 400 === 0){
             alert ("É um ano bixesto")
         }
-        else if (numero && 4 === 0 && (!numero && 100 ===0)) {
+        else if (numero % 4 === 0 &&  !(numero % 100 ===0)) { //negação vai fora para negar a expressão
             alert ("É um ano bixesto")
         }
+        // OUTRA forma: else if (ano % 4 === 0 && ano % 100 !===0) ano dividido por 100 é diferente de zero
+        // OUTRA FORMA PRA JUNTAR AS PARTE DE CIMA COM A DEBAIXO:
+        // else if (ano % 400 === 0 || (ano & 4 === 0 && !(ano % 100 ===0)))
         else {
-            alert("Não é um ano bixesto")
+            alert("O ano" + numero + " não é um ano bixesto")
+            // mensagem usando string template com interpolação de variável
+            // alert(`O numero ${numero} é bissesto`)
         }
 
     </script>
