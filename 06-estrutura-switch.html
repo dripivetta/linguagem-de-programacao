@@ -28,10 +28,35 @@
         let numero2 = parseFloat(prompt("Insira o segundo número"))
         let op = (prompt("Insira uma operação:"))
 
+        
         //Validação da entrada numérica
         if (isNaN(numero1) || isNaN(numero2)){
             alert('ERRO: Os valores informados não correspondem a números válidos')
         }
+        else {
+            // switch..case é uma estrutura de decisão que compara uma única variável
+            // contra uma série de valores
+            switch(op){
+                case "+":
+                    document.write (`${numero1} + ${numero2} é igual a ${numero1+numero2}`)
+                    break // Interrompa a execução do switch
+                case "-":
+                    document.write (`${numero1} - ${numero2} é igual a ${numero1 - numero2}`)
+                    break
+                case "*": //case vazio
+                case "x": //case vazio
+                case "X":
+                    document.write (`${numero1} * ${numero2} é igual a ${numero1 * numero2}`)
+                    break
+                case "/": //case vazio
+                case ":":
+                    document.write (`${numero1} / ${numero2} é igual a ${numero1 / numero2}`)
+                    break
+                default: // "Else" do switch
+                     alert ("Não é um operador válido")
+            }
+        }
+        /*
         else if (op === "+") {
             document.write(`${numero1} + ${numero2} é igual a ${numero1+numero2}`)
         }      
@@ -47,6 +72,9 @@
         else{
             alert ("Não é um operador válido")
         }
+        */
+    
+
 
     </script>
 </head>
