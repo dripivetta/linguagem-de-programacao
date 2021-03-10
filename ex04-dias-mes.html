@@ -23,6 +23,87 @@
             * FEVEREIRO: 28 ou 29 dias (em anos bissextos)
         */
 
+        
+        /* ESTRUTURA IF
+
+        // let numero = parseInt(prompt("Insira um número correspondende a um mês:"))
+
+        if (isNaN(numero)){
+            alert('ERRO: Os valores informados não correspondem a dados válidos')
+        }
+        else if (numero === 1){
+            alert ("Janeiro possui 31 dias")
+        }
+        else if (numero === 2){
+            alert ("Fevereiro possui 28 ou 29 dias em anos bissextos")
+        }
+        else if (numero === 3){
+            alert ("Março possui 31 dias")
+        } 
+        else if (numero === 4){
+            alert ("Abril possui 30 dias")
+        }
+        else if (numero === 5){
+            alert ("Maio possui 31 dias")
+        }
+        else if (numero === 6){
+            alert ("Junho possui 30 dias")
+        }
+        else if (numero === 7){
+            alert ("Julho possui 31 dias")
+        }
+        else if (numero === 8){
+            alert ("Agosto possui 31 dias")
+        }
+        else if (numero === 9){
+            alert ("Setembro possui 30 dias")
+        }
+        else if (numero === 10){
+            alert ("Outubro possui 31 dias")
+        }
+        else if (numero === 11){
+            alert ("Novembro possui 30 dias")
+        }
+        else if (numero === 12){
+            alert ("Dezembro possui 31 dias")
+        }
+        else{
+            alert("O número digitado não conrresponde a um mês")
+        }
+        */ 
+
+        let numero = parseInt(prompt("Insira um número correspondende a um mês:"))
+
+        if (isNaN(numero)){
+            alert('ERRO: Os valores informados não correspondem a dados válidos')
+        }
+            else {
+            switch(numero){
+                case 1:
+                case 3:
+                case 5:
+                case 7:
+                case 8:
+                case 10:
+                case 12:
+                    document.write (`O mês possui 31 dias`)
+                    break 
+                case 4: 
+                case 6: 
+                case 9:
+                case 11:
+                case 12:
+                    document.write (`O mês possui 30 dias`)
+                    break
+                case 2:
+                    document.write ("O mês possui 28 dias ou 29 em ano bissexto")
+                    break
+                default:
+                     alert ("Não é um numero correspondente a um mês válido")
+            }
+        }
+
+
     </script>
 </head>
 <body>
