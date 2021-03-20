@@ -27,15 +27,14 @@
             num = parseInt(prompt("Informe um número inteiro maior que 1:"))
         } while (isNaN(num) || num <= 0)
 
-        let j = 1  
-        let fatorial   
-        for (let i = num; j<= num; j++){
-            fatorial = j*(num-j)
-            document.write(fatorial+"<br>") 
+        let fat = 1   
+        for (let i = num; i > 1; i--){
+            fat = fat * i
         }
+        document.write(fat) 
 
 
-    </script>
+    </script>   
 </head>
 <body>
     
