@@ -23,28 +23,31 @@
 
         let num1
         let num2
-
+        
         do {
             num1 = parseInt(prompt("Informe o primeiro número inteiro:"))
             num2 = parseInt(prompt("Informe o segundo número inteiro diferente do primeiro:"))
-        } while (isNaN(num) || num1 === num2)
+        } while (isNaN(num1) || isNaN(num2) || num1 === num2) 
+
 
         let menor
         let maior
 
-        if (num1 < num2) {
-            menor = num1
-            maior = num2            
-        }
-        else {
-            menor = num2
-            maior = num1
-        }
+        if (num1> num2){
+                maior = num1
+                menor = num2
+            }
+        else{
+                maior = num2
+                menor = num1
+            }
 
+        let soma = 0
         for (let i = menor; i <= maior; i++){ 
-            document.write(i+"<br>")
-        }
-
+            soma = soma + i
+            document.write(soma + "<br>")     
+        } 
+        
 
 
     </script>
