@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Objetct Model</title>
+    
+</head>
+<body>
+    <h1>Document Objetct Model (DOM)</h1>
+    <p>O <em>Document Objetct Model</em> (Modelo de Objetos do Documento) é a estrutura da página HTML tal como vista pelo JavaScript.</p>
+    
+    <ul>
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+    </ul>
+
+    <ol>
+        <li id="bra">Brasil</li>
+        <li id="arg">Argentina</li>
+        <li id="uru">Uruguai</li>
+        <li id="par">Paraguai</li>
+        <li id="bol">Bolívia</li>
+        <li id="chi">Chile</li>
+    </ol>
+
+    <script>
+        // Ativa verificações adicionais de variáveis 
+        // Modo "chato" do JavaScript
+        'use strict'
+
+        /* QUANDO MANIPULAR DO DOM (OS ELEMENTOS DA PÁGINA HTML) VIA JS, A SEÇÃO
+        <SCRIPT> PRECISA SER RELACIONADA PARA LOGO ANTES DA TAG </BODY>
+        */
+
+        //Mudar o texto do elemento H1
+        // 1) capturar o elemento HTML
+        const elementoH1 = document.querySelector("h1")  // pode usar o let no lugar do const
+        // 2) mudando algumas caraterística do documento
+        elementoH1.textContet = "Novo título da página"
+        elementoH1.style.color ="blue"
+
+        // Mudar algumas características do parágrafo
+        const elementoP = document.querySelector("p")
+
+        elementoP.style.textAlign = "center"
+        elementoP.style.fontWeight = "bold"
+
+        //Mudar a característica de um <li>
+        const elementoli = document.querySelector("li")
+        elementoli.style.backgroundColor = "yellow"
+        elementoli.style.fontStyle = "italic"
+
+        // document.querySelector ("nometag") irá capturar sempre o Primeiro elemento do tipo "nometag"
+
+        //Capturando todos os elementos <li>
+        /* document.querySelectorAll("nometag") irá capturar TODOS os elementos do tipo "nometag"
+        e coloca-lo dentro de um vetor. O primeiro elemento do vetor tem índice 0.*/
+        const todosli = document.querySelectorAll ("li")
+        todosli [0].style.color ="red"
+        todosli [1].style.color ="green"
+        todosli [2].style.color ="orange"
+
+        todosli [6].style.textDecoration ="underline"
+
+        //Capturando um elemento por id. Existem duas formas
+        //Forma 1 (mais antiga)
+        const itemArgentina = document.getElementById("arg")
+        itemArgentina.style.color ="royalblue"
+
+        //Forma 2 (mais recente)
+        const itemBolivia = document.querySelector("#bol")
+        itemBolivia.style.color ="seagreen"
+
+
+    </script>
+</body>
+</html>
