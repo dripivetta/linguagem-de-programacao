@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de saudação</title>
+    <style>
+    /* Isto é CSS */
+        div, fieldset {
+            margin-bottom: 20px;
+            
+        }
+        #saudação{
+            background-color:limegreen;
+            padding: 10px; /*Espaçamento interno entre o texto e a borda*/
+        }
+
+        div label { /*Só os label que estiverem dentro de uma div*/
+            display:bloc; /*Faz o label ocupar sua própria linha*/
+        }
+    </style>
+    
+</head>
+<body>
+    <h1>Formulário de saudação</h1>
+    <div>
+        <label for="primeio-nome">Primeiro nome</label>
+        <input id="primeiro-nome">
+    </div>
+
+    <div>
+        <label for="sobrenome">sobrenome</label>
+        <input id="sobrenome">
+    </div>
+
+    <div>
+        <label for="forma-tratamento">Forma de tratamento</label>
+        <select id="forma-tratamento">
+            <option>(Selecione)</option>
+            <option>Vossa Majestade</option>
+            <option>Excelentíssimo/a</option>
+            <option>Ilustríssimo/a</option>
+            <option>Vossa senhoria</option>
+            <option>Senhor/ora</option>
+            <option>Cremosissímo/a</option>
+        </select>
+    </div>
+
+    <fieldset>
+        <legend>Sexo</legend>
+        <input id="masculino" type="radio" name=sexo checked>
+        <!--Checked já da uma opção marcada na bolinha-->
+        <label for="masculino">Masculino</label>
+        <br>
+        <input id="feminino" type="radio" name=sexo>
+        <label for="feminino">Feminino</label>
+    </fieldset>
+
+    <div>
+        <label for="hora-dia">Hora do dia</label>
+        <input id="hora-dia" type="number" min="0" max="23">
+    </div>
+
+    <fieldset>
+        <legend>Opções de exibição</legend>
+        <input id="alert" type="checkbox">
+        <label for="alert">Exibir com alert()</label>
+        <br>
+        <input id="document" type="checkbox">
+        <label for="document">Exibir no documento</label>
+        <!--se não colocar o for o usuário precisa acertar exatamente o quadrado, com o for pode clicar no nome-->
+    </fieldset>
+
+    <div id="saudação">
+    <!--Aqui vai aparecer a saudação se a opção "Exibir no documento" estiver marcada-->
+    </div>
+
+    <div>
+        <button id="enviar">Enviar</button>
+    </div>
+
+    <script>
+        // Ativa verificações adicionais de variáveis 
+        // Modo "chato" do JavaScript
+        'use strict'
+
+        /*CAPTURA DOS ELEMENTOS*/
+        //const elPrimeiroNome = document.getElementById ('primeiro-nome')
+        // uma forma mais nova abaixo
+        const elPrimeiroNome= document.querySelector ("#primero-nome")
+        const elSobrenome= document.getElementById("sobrenome")
+        const elFormaTratamento = document.getElementById("forma-tratamento")
+        const elMasculino =document.getElementById ("masculino")
+        const elFeminino =document.getElementById ("feminino")
+        const elHoraDia = document.querySelector("#hora-dia")
+        const elAlert = document.querySelector("#alert")
+        const elDocument = document.querySelector("#document")
+        const elSaudacao = document.querySelector ("#saudacao")
+        const elEnviar = document.querySelector ("#enviar")
+
+        function validar (){
+            //Retorna true caso todos os campos do formulário tiverem sidos preenchidos corretamente, ou false, caso contrário
+            if (elPrimeiroNome.value === ""){
+                alert ("O primeiro nome deve ser preenchido")
+                elPrimeiroNome.focus()//Coloca o cursor no campo
+                return false
+            }
+
+        }
+    </script>
+    
+</body>
+</html>
