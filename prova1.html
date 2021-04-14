@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prova 1</title>
+    <script>
+        // Ativa verificações adicionais de variáveis 
+        // Modo "chato" do JavaScript
+        'use strict'
+
+        let num
+        // Número entre 1 e 400
+        do {
+            num = parseInt(prompt('Informe um número entre 1 e 400:'))
+        } while(isNaN(num) || num < 1 || num > 400)
+             
+        function embarque(km){
+            for (let km = 1; km <= num; km++) {
+                if (km % 50 === 0){ //Múltiplo de 50
+                    document.write(`No km ${km} há uma estação de embarque e desembarque. <br>`)
+                }
+                    else{
+                    document.write(`No km ${km} NÃO há estações. <br>`)
+                }
+            }
+                        
+        }
+
+        switch(num){
+                case 98:
+                    alert (`No KM ${num} há postos de conveniência da Rede Mil Grau`)
+                    break 
+                case 190:
+                    alert (`No KM ${num} há postos de conveniência da Rede Mil Grau`)
+                    break
+                case 283:
+                    alert (`No KM ${num} há postos de conveniência da Rede Mil Grau`)
+                    break
+                case 379:
+                    alert (`No KM ${num} há postos de conveniência da Rede Mil Grau`)
+                    break
+                case 155:
+                    alert (`No KM ${num} há postos da polícia Ferroviária`)
+                    break
+                case 355:
+                    alert (`No KM ${num} há postos da polícia Ferroviária`)
+                    break
+                case 137:
+                    alert (`No KM ${num} há Aeroporto Interplenário de Virapratos`)
+                    break
+                case 204: 
+                    alert (`No KM ${num} há Hotel Cacique Internacional 6 estrelas`)
+                    break
+                case 311:
+                    alert (`No KM ${num} há Boleli shopping center`)
+                    break
+                case 356: 
+                    alert (`No KM ${num} há acesso ao Acqua Park unidade III`)
+                    break
+                default: 
+                     alert ("NADA AQUI")
+            }
+
+        embarque (num)
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
