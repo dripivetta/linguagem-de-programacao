@@ -73,7 +73,88 @@
         frutas.push("melancia")
         document.write("Vetor frutas depois:" + frutas + "<br>")
 
+        // Inserindo um novo elemento no INICIO do vetor: unshift ()
+        carros.unshift("DeLorean")
+        document.write("carros:" + carros + "<br>")
+        carros.unshift("Belina")
+        document.write("carros:" + carros + "<br>")
+        carros.unshift("Chevette")
+        document.write("carros:" + carros + "<br>")
+
+        // Retirando um elemento do FINAL do vetor: pop()
+        let retirado = carros.pop ()
+        document.write(retirado + "<br>")
+        document.write("carros" + carros + "<br>")
+        retirado = carros.pop()
+        document.write(retirado + "<br>")
+        document.write("carros" + carros + "<br>")
+
+        // Retirando um elembro do INICIO do vetor: shift()
+        retirado = carros.shift()
+        document.write(retirado + "<br>")
+        document.write("carros" + carros + "<br>")
+        retirado = carros.shift()
+        document.write(retirado + "<br>")
+        document.write("carros" + carros + "<br>")
+
+        // Inserindo um elemento em uma posição específica: splice ()
+        // Parâmetros do splice para inserção:
+        // 1º -> a posição onde vai acontecer a inserção
+        // 2º -> quantos elementos serão removidos na operação? 
+        // (para inserção, deve ser 0)
+        // 3º -> o valor a ser inserido
+
+        carros.splice(1,0, "Brasília")
+        document.write("Carros:" + carros + "<br>")
+        carros.splice(2,0,"Alpha Romeo")
+        document.write("Carros:" + carros + "<br>")
+        carros.splice(0,0, "Variante") // Mesmo que: carros. unshift ("Variante")
+        document.write("Carros" +  carros + "<br>")
+        carros.splice(carros.length,0, "Corcel") // Mesmo que: carros.push ("Corcel")
+        document.write("Carros:" + carros + "<br>")
+        carros.splice(-1,0, "Fusca") // 1º parametro negativo, conta as posições de tras para frente
+        document.write("Carros:" + carros + "<br>")
+
+        // Retirando elementos de uma posição específica: splice ()
+        // Parâmetros de splice () para remoção:
+        // 1º -> posição onde será feita a retirada
+        // 2º -> Quantos elementos serão retirados?
+        // não tem 3º parâmetro porque não entra ninguém
+
+        retirado = carros.splice(3,1)
+        document.write(retirado + "<br>")
+        document.write("carros: " + carros + "<br>")
+        retirado = carros.splice(1,2)
+        document.write(retirado + "<br>")
+        document.write("carros: " + carros + "<br>")
+        retirado = carros.splice(0,1) // Mesmo que: carros.shift()
+        document.write(retirado + "<br>")
+        document.write("carros: " + carros + "<br>")
+        retirado = carros.splice(carros.length - 1 ,1) // Mesmo que: carros.pop()
+        document.write(retirado + "<br>")
+        document.write("carros: " + carros + "<br>")
+
+        // Substituição de um elemento no vetor: splice ()
+        // Parâmetros do splice () para substituição
+        // 1º -> Posição para substituir
+        // 2º - > Quantos elementos serão retirados
+        // 3º - > Novos valores a serem inseridos
+        carros.splice (0,1, "Gol")
+        document.write("Carros: "+ carros + "<br>")
+        carros.splice (1,1, "Apolo", "Marea")
+        document.write("Carros: "+ carros + "<br>")
+
+        // Colocando mais alguns carros, com push () todos de uma vez
+        carros.push("Corsa", "Tempra", "Kadete", "Palio")
+        document.write("Carros: "+ carros + "<br>")
         
+        // A coisa mais importante é você conseguir percorrer os elementos do vetor
+        // PERCURSO DE VETOR: significa visitar cada um dos elementos para fazer algo com ele
+        document.write("<hr>")
+        for (let i = 0; i <= carros.length -1; i++){ // ou usar i < carros.lenght (ai não precisa colocar -1 )
+            // Escrevendo os nomes de cada carro, um por linha
+            document.write(carros[i].toUpperCase()+ "<br>")
+        }        
     </script>
 </head>
 <body>
