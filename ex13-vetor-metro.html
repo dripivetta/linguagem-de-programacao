@@ -57,8 +57,69 @@
                 Faça um loop FOR...OF para exibir as estações e depois
                 passe um traço horizontal (<hr>).            
         */
-     
-       
+        
+        // Vetor vazio
+        let vetor1 = []
+        // Inserir estações
+        vetor1.push("Santa Teresinha", "Estação", "Centro", "Jardim Lima", "Aeroporto I")
+        // Fazer o for tradiconal crescente
+        for (let i = 0; i <= vetor1.length -1; i++){ 
+            document.write(vetor1[i] + "<br>") 
+        } 
+        // Traço
+        document.write("<hr>")
+
+        // Inserir as estações que vieram depois, ou seja no fim
+        vetor1.push("City Petrópolis", "Aeroporto IV")
+        //For OF
+        for (let ordem of vetor1){
+            document.write(ordem + "<br>")
+        }
+        // Traço
+        document.write("<hr>")
+
+        // Inserindo um elemento em uma posição específica: splice ()
+        vetor1.splice(1,0, "Vila Imperador")
+        vetor1.splice(5,0,"Jardim Alvorada")
+        //Verificar se a posição deu certo
+        document.write(vetor1 + "<br>")
+        // Traço
+        document.write("<hr>") 
+         // For tradicoinal decrescente
+        for (let dec = vetor1.length - 1; dec >=0; dec --){
+            document.write(vetor1[dec] + "<br>")
+        }
+        // Traço
+        document.write("<hr>") 
+        
+        // Substituindo um elemento do vetor em uma posição específica: splice ()
+        vetor1.splice (3,1, "9 de Julho", "Champagnat")
+        // Fazer o for tradiconal crescente
+        for (let n = 0; n <= vetor1.length -1; n++){ 
+            document.write(vetor1[n] + "<br>") 
+        } 
+        // Traço
+        document.write("<hr>")
+
+        //Retirando elementos de uma posição específica: splice ()
+        let retirado
+        retirado = vetor1.splice(7,1)
+        document.write("Retirada: " + retirado + "<br>")
+        retirado = vetor1.splice(length - 1,1)
+        document.write("Retirada: " + retirado + "<br>")
+        retirado = vetor1.splice(0,1)
+        document.write("Retirada: " + retirado +  "<br>")
+        // Traço
+        document.write("<hr>") 
+        //For OF
+        for (let final of vetor1){
+            document.write(final + "<br>")
+        }
+        // Traço
+        document.write("<hr>")   
+
+
+        
     </script>
 </head>
 <body>
