@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criação de elementos HTML via JavaScript - DOM</title>
+
+</head>
+<body>
+    <h1>Criação de elementos HTML via JAVASCRIP</h1>
+    <p>Este arquivo demonstra como criar novos elementos HTML usando JavaScript.</p>
+    <ul>
+        <li>Maça</li>
+        <li>Banana</li>
+        <li>Uva</li>
+    </ul>
+    <script>
+        // Ativa verificações adicionais de variáveis 
+        // Modo "chato" do JavaScript
+        'use strict'
+
+        // Criando um novo elemento (etapa 1)
+        const novoitem = document.createElement ('li') // criou um li vazio
+        // criar novos elementos só o document faz isso
+        // Colocando conteúdo no novo elemento
+        novoitem.textContent = 'Laranja' // colocou um item dentro
+        // até agora criou um elemento solto no documento 
+        const lista = document.querySelector('ul') // sem # selecione o primeiro elemento do tipo UL, com # seleciona por ID // Seleciona o primeiro (e único) elemento do tipo ul no documento 
+
+        // Etapa 2
+        // Incorporando o novo elemento como filho de seu pai
+        // - ou seja li encaixou ele como filho do ul -
+        lista.appendChild (novoitem) // a lista assumiu a paternidade do li
+
+        const novoitem2 = document.createElement ('li')
+        novoitem2.textContent ='Jabuticaba'
+        // não precisa capturar o pai pois ele já foi capturado antes
+        lista.appendChild (novoitem2)
+
+        const novoitem3 = document.createElement ('li')
+        novoitem3.textContent ='Morango'
+        lista.appendChild (novoitem3)
+
+        const paragrafo = document.createElement ('p')
+        paragrafo.textContent ='Este parágrafo foi adicionado usando JavaScript'
+        paragrafo.style.color ='pink'
+        // quando o body for assumir algum elemento como pai, ele não precisa ser capturado, vai ser feito dessa forma direto:
+        document.body.appendChild(paragrafo)
+
+        const div = document.createElement ('div')
+        div.textContent = 'Sou uma div'
+        div.style.background ='yellow'
+        div.style.textAlign = 'center'
+        document.body.appendChild (div)
+        
+        // O APPENCHILD SEMPRE QUE ADICIONAR UM NOVO ELEMENTO, IRÁ COLOCAR COMO ÚLTIMO FILHO DO SEU PAI
+        const novoitem4 = document.createElement ('li')
+        novoitem4.textContent ='Amora'
+        lista.appendChild (novoitem4)
+        // PARA COLOCAR EM OUTRA POSIÇÃO É PRECISO OUTRO MÉTODO:
+        const novoitem5 = document.createElement ('li')
+        novoitem5.textContent = 'Abacaxi'
+        lista.insertBefore (novoitem5, novoitem) 
+        // InserteBefore () tem dois parâmetros:
+        // 1º -> o novo item a ser inserido
+        // 2º -> o item já existente, que servirá de Referência para o local onde o novo item será inserido
+        const novoitem6 = document.createElement ('li')
+        novoitem6.textContent = 'Abacate'
+        lista.insertBefore (novoitem6, novoitem3)
+
+        const paragrafo2 = document.createElement ('p')
+        paragrafo2.textContent = 'Este parágrafo foi inserido aqui com insertBefore ()'
+        document.body.insertBefore (paragrafo2, lista)
+
+        // Inserindo um novo elemento no início da lista que não foi capturado
+        const novoitem7 = document.createElement ('li')
+        novoitem7.textContent = 'Caju'
+        // Usando um querySelector () para capturar o primeiro elemento do tipo li
+        const itemMaca = document.querySelector ('li')
+        lista.insertBefore (novoitem7, itemMaca)
+
+        const novoitem8 = document.createElement ('li')
+        novoitem8.textContent = 'Ameixa'
+        // Usando o querySelectorAll () para capturar todos os itens do tipo li
+        const todositens = document.querySelectorAll ('li') // querySelectorAll (captura todos elementos especificado e retorna um VETOR contendo todos os eles)
+        lista.insertBefore (novoitem8, todositens[3])
+
+        // CONCLUSÃO:
+        // 1) insertBefore () permite posicionar o novo elemento entre os filhos já existentes de seu pai, usando um outro elemento existente como ponto de referência.
+        // 2) querySelectorAll () captura todos elementos do tipo especificado dentro de um vetor.
+
+    </script>
+    
+    
+</body>
+</html>

@@ -4,6 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Modelo de documento HTML</title>
+    
+</head>
+<body>
+    <h1>Criação de novos elementos</h1>
+    <ol>
+
+    </ol>
+
     <script>
         // 'use strict' impede que vari�veis sejam declaradas
         // sem o uso de let, var ou const
@@ -27,14 +35,69 @@
                para o segundo turno os dois candidatos mais votados.".
 
         */
+       /* 
+            1) Insira três itens na lista ordenada, com os valores "Belarmina", 
+            "Luzinete" e "Roberval".
+        */
+
+        const lista = document.querySelector ('ol')
+
+        const item1 = document.createElement ('li')
+        item1.textContent = 'Belarmina'
+        lista.appendChild (item1)
+
+        const item2 = document.createElement ('li')
+        item2.textContent =' Luzinete'
+        lista.appendChild (item2)
+
+        const item3 = document.createElement ('li')
+        item3.textContent = 'Roberval'
+        lista.appendChild (item3)
+
+        /*
+            2) Insira na lista os itens "Adamastor", "Ildefonso", "Querência" e
+            "Turíbio", mantendo a ordem alfabética.
+        */
+
+        itemA = document.createElement ('li')
+        itemA.textContent = 'Adamastor'
+        const todos = document.querySelectorAll ('li')
+        lista.insertBefore (itemA, todos[0])
+
+        itemI = document.createElement ('li')
+        itemI.textContent = 'Idelfonso'
+        const todos2 = document.querySelectorAll ('li')
+        lista.insertBefore (itemI, todos2[2])
+
+        itemQ = document.createElement ('li')
+        itemQ.textContent = 'Querência'
+        const todos3 = document.querySelectorAll ('li')
+        lista.insertBefore (itemQ, todos3[4])
+
+        itemT = document.createElement ('li')
+        itemT.textContent = 'Turíbio'
+        lista.appendChild (itemT)
+
+        /*
+            3) Insira um título de nível 2 logo abaixo do título de nível 1, com
+              o texto "Lista de candidatos".
+        */
+
+        const texto2 = document.createElement ('h2')
+        texto2.textContent = 'Lista de Candidatos:'
+        document.body.insertBefore (texto2, lista)
+
+        /*
+            4) Insira um parágrafo abaixo da lista ordenada, com o texto "Irão
+            para o segundo turno os dois candidatos mais votados.".
+        */
+        
+        const paragrafo = document.createElement ('p')
+        paragrafo.textContent = 'Irão para o segundo turno os dois candidatos mais votados:'
+        document.body.appendChild (paragrafo)
+
             
     </script>
-</head>
-<body>
-    <h1>Criação de novos elementos</h1>
-    <ol>
-
-    </ol>
     
 </body>
 </html>
